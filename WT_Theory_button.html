@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script>
+        function vitClick(year) {    
+        alert("Vit was established in the ",year);
+        }
+
+        function getwinner(winner) {
+            switch (winner){
+                case "p1":
+                    alert("The winner is Player 3")
+                case "p2":
+                    alert("The winner is Player 3")    
+                case "p3":
+                    alert("Congratulations you are correct")
+                case "p4":
+                    alert("The winner is Player 3")
+            }
+        }
+
+        function getdate(winner) {
+            switch (winner){
+                case "d1":
+                    alert("Today is Friday")
+                case "d2":
+                    alert("Today is Friday")    
+                case "d3":
+                    alert("Congratulations you are correct")
+                case "d4":
+                    alert("Today is Friday")
+            }
+        }
+        
+        </script>
+<body>
+    <button type="button" id = "button1" onclick = "vitClick" ></button>
+    <form >
+        <label>Choose The winner of wimbeldon 2020</label>
+        <input
+            type="radio"
+            id="m"
+            value = "p1"
+            onclick="getwinner(this.value)"
+        /> Player A
+        <input
+            type="radio"
+            id="f"
+            value="p2"
+            onclick="getwinner(this.value)"
+        /> Player B
+       <br>
+       <input
+            type="radio"
+            id="f"
+            value = "p3"
+            onclick="getwinner(this.value)"
+            
+        /> Player C
+       <br>
+       <input
+            type="radio"
+            id="f"
+            value = "p4"
+            onclick="getwinner(this.value)"
+        /> Player B
+       <br>
+          <br>
+          <br>
+    </form>
+
+          
+
+</body>
+</html>
+
+<!-- // < The wimbeldon 2020 winner is of switch case statement js today's day -->
+<!-- Assign Variables x =7 y =8 z = 9 
+pre increment x and compare it with y and display result
+post increment x add with z and assign the result to x again 
+x<z is anded with y -->

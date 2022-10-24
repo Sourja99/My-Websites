@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href=registration_style.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma">
+    <title>My Registration Form</title>
+    <style>
+        body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
+        .w3-bar-block .w3-bar-item {padding:20px}
+
+        .content {
+            max-width : 500px;
+            margin: auto;
+        }
+        </style>
+  </head>
+  
+  <body bgcolor="lightgreen">
+    <div class="content">
+    
+    <h1 align="center"> Registration Form</h1>
+    <hr>
+    <br>
+    <form id ="myForm">
+
+        <label>First Name</label>
+        <input
+            type="text"
+            id="fname"
+            onfocus="this.value=''"
+            placeholder="Enter your First Name"
+            required
+          />
+          <br>
+          <br>
+        
+        <label>Last Name</label>
+        <input
+            type="text"
+            id="lname"
+            onfocus="this.value=''" 
+            placeholder="Enter your last Name"
+            required
+            />
+            <br>
+            <br>
+        <label> Contact No.</label>
+        <input
+            type="number"
+            id="contact"
+            onfocus="this.value=''"
+            placeholder="Enter your Number"
+            required
+        />
+        <br>
+        <br>
+        <label>Email Id</label>
+        <input
+            type="text"
+            id="email_id"
+            onfocus="this.value=''"
+            placeholder="Enter your Institutional Email id"
+            required
+            /><br>
+        <br>
+        
+        <label>Address</label>
+        <br>
+        
+        <textarea cols="80" id="address" maxlength="20" placeholder="Maximum char should be less than 20 characters"
+        onfocus="this.value=''" required>
+
+        </textarea>
+    
+        <br>
+        <br>
+
+        <label>Program</label>
+        <select>
+            <option value="en">ENTC</option>
+            <option value="me">Mechanical</option>
+            <option value="cs">Computer Science</option>
+            <option value="el">Electrical</option>
+            <option value="bi">Biomedical</option>
+            <option value="ot" id="o">Other</option>
+            <!-- <option value="vv" id="ocat"></option> -->
+            <!-- <option value="x" id="excat"></option> -->
+           
+        </select>
+        <br>
+        <br>
+        <label> Year</label>
+        <select>
+            <option value="y_1">2019-2020</option>
+            <option value="y_2">2020-2021</option>
+            <option value="y_3">2021-2022</option>
+            <option value="y_4">2022-2023</option>
+            <option value="y_5">2023-2024</option>
+            <option value="y_6" id="other">Other</option>
+            <!-- <option value="vv" id="ocat"></option> -->
+            <!-- <option value="x" id="excat"></option> -->
+           
+        </select>
+        <br>
+        <br>
+
+        <label>Course</label>
+        <select>
+            <option value="fd">B-Tech</option>
+            <option value="es">M-Tech</option>
+            <option value="gr">M-S</option>
+            <option value="et">M.B.A</option>
+            <option value="et">M.B.B.S</option>
+            <option value="oth" id="ot">Other</option>
+            <!-- <option value="vv" id="ocat"></option> -->
+            <!-- <option value="x" id="excat"></option> -->
+           
+        </select>
+        <br>
+        <br>
+        <label>Gender</label>
+        <input
+            type="radio"
+            id="m"
+    
+        />Male
+        <input
+            type="radio"
+            id="f"
+            
+        />Female
+       <br>
+
+
+
+    </form>
+    <br>
+    <hr>
+    
+    <button id = "s" onclick="validation()">Submit</button>
+    <button>Reset</button>
+    </div>
+
+
+    <!-- <div class="form-control">
+        <label for="amount"> Contact No.  <br /> </label>
+        <input
+          type="number"
+          id="amount"
+          onfocus="this.value=''"
+          placeholder="Enter your Number?"
+          style="width: 400px;margin-top: 10px;padding: 5px 8px;border-radius: 1rem;margin-left: 38px;"
+         
+        />
+      </div>
+
+     
+      <div class="form-control">
+          <label for="text">Note</label>
+          <input
+            type="text"
+            id="text_note"
+            onfocus="this.value=''"
+            placeholder="Enter your Address?"
+          />
+      </div>
+
+<!--Date-->          
+        <!-- <div class="form-control">
+          <label for="amount">Date<br /> </label>
+          <input
+            class="date_style"
+            type="date"
+            id="date"
+            onfocus="this.value=''"
+            placeholder="  Enter Date..."            
+          />
+        </div>  -->
+  </body>
+  <script>
+    function validation() {
+      var email = document.getElementById("email_id").value;
+      var contact_number = document.getElementById("contact").value;
+      var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+      var x = document.getElementById('fname').value;
+      var y = document.getElementById('lname').value;
+      //var i = 0;
+      
+      if((x.length && y.length) ==0 ) {
+        alert('Please enter a valid name');
+        return false;
+      }
+      if (!email.match(validRegex) || contact_number.length < 10) {
+        //break;
+        alert("ERROR in your email or contact details");
+        return false;
+      } 
+      //i+=1
+      
+      else{
+        alert("Form submitted successfully");
+
+  //document.form1.text1.focus();
+        //return false;
+    }
+    // if (contact_number.length < 10) {
+    //   alert("Please enter a valid number!");
+    // }
+    // else{
+    //   alert("Form Submitted succesfully!");
+    // }
+    
+
+}
+     // alert("Please enter a valid email address");
+    //}
+  </script>
+</html>
